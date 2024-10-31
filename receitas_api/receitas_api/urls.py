@@ -20,13 +20,11 @@ from django.http import HttpResponse
 
 import rest_framework
 
-from api_auth import urls as api_auth_urls
-# from mock_airlines import urls as mock_urls
+from authentication import urls as auth_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("hello/", lambda req: HttpResponse("Hello"), name="hello"),
     
-    # path('api-auth/', include('rest_framework.urls')),
-    path('api-auth/', include(api_auth_urls)),
+    path('auth/', include(auth_urls)),
 ]
