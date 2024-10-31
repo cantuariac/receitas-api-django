@@ -14,14 +14,9 @@ class RegisterUser(CreateAPIView):
     queryset=User.objects.all()
     serializer_class=UserSerializer
 
-class HelloUser(GenericAPIView):
+class UserProfile(GenericAPIView):
     permission_classes = [IsAuthenticated]
+    serializer_class=UserSerializer
     def get(self, request, format=None):
-        request.user.username
-        return Response("Hello " + request.user.username)
-
-class HelloChef(GenericAPIView):
-    permission_classes = [IsAuthenticated, IsChef]
-    def get(self, request, format=None):
-        request.user.username
-        return Response("Hello chef " + request.user.username)
+        serializer = self.get_serializer(request.user)
+        return Response(serializer.data)

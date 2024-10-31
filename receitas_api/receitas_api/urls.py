@@ -18,13 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 
-import rest_framework
-
 from authentication import urls as auth_urls
+from recipes import urls as recipe_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("hello/", lambda req: HttpResponse("Hello"), name="hello"),
-    
     path('auth/', include(auth_urls)),
+    path('recipes/', include(recipe_urls)),
 ]
