@@ -27,9 +27,9 @@ sys.path.insert(0, str(BASE_DIR / 'apps'))
 SECRET_KEY = 'django-insecure-&w3mtnq*#64$_#!$wg3pcjfb%1w!mkykw^uahuq8^f3s@ifhr_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-ALLOWED_HOSTS = []
+DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 
 # Application definition
@@ -118,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 

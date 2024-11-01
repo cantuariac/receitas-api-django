@@ -39,3 +39,12 @@ python manage.py test apps/
  ```
 
 Após a montagem do container a documentação da API estará disponível em [Redoc](http://127.0.0.1:8001/redoc/) e [Swagger](http://127.0.0.1:8001/swagger/).
+
+## Autenticação
+
+Para consumir os endpoints desta API é necessário registrar e autenticar um usuário de API. Utilize o endpoint ``/auth/register/`` para registrar um usuário.
+
+Para obter Token de autenticação de usuário utilize o endpoint ``/auth/token/``. Para autenticar suas requisições utilizando o token adicione o seguinte header:
+``Authorization: Token <token>``
+
+A autenticação por sessão também está habilitada na API, basta realizar o login pelo endpoint ``/auth/login/``
