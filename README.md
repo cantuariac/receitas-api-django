@@ -1,7 +1,7 @@
 # Receitas API
 ## Descrição
 
-Projeto de API Web feita durante processo seletivo para uma vaga de emprego na [Workalove Edtech](https://www.linkedin.com/company/workalove/).
+Projeto de API Web feita durante processo seletivo para uma vaga de Desenvolvedor Backend.
 
 A **receitas_api** é uma API Web RESTful desenvolvida em Python utilizando Django 4.2 e Django REST Framework. É composta por um módulo de autenticação de usuário e um módulo CRUD para um recurso de "receitas culinárias".
 
